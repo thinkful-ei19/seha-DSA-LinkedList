@@ -239,3 +239,20 @@ function findLast(list, item){
   }
 }
 console.log(findLast(main(), 'Athena'));
+
+function WhatDoesThisProgramDo(lst) {
+  let current = lst.head;
+  while (current !== null) {
+    let newNode = current;
+    while (newNode.next !== null) {
+      if (newNode.next.value === current.value) {
+        newNode.next = newNode.next.next;
+      }
+      else {
+        newNode = newNode.next;
+      }
+    }
+    current = current.next;
+  }
+}
+//The runtime for this algorithm is O(n^k) since there is nested loops.
